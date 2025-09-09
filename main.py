@@ -17,10 +17,13 @@ if not st.session_state.solved:
         if st.button("Submit"):
             st.session_state.guesses += 1
             if user < st.session_state.number:
+                st.audio("new-notification", loop=False, format="audio/new-notification", autoplay=False)
                 st.warning("Higher number please!")
             elif user > st.session_state.number:
+                st.audio("new-notification", loop=False, format="audio/new-notification", autoplay=False)
                 st.warning("Lower number please!")
             else:
+                st.audio("success-trumpets", loop=False, format="audio/success-trumpets", autoplay=False)
                 st.session_state.solved = True
                 st.success(f"Congratulations! You guessed my secret number {st.session_state.number} in {st.session_state.guesses} guesses.")
                 st.balloons()
