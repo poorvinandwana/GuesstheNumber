@@ -25,7 +25,7 @@ if not st.session_state.solved:
             else:
                 st.audio("audio/success-trumpets.mp3", loop=False, format="audio/mp3", autoplay=True)
                 st.session_state.solved = True
-                st.success(f"Congratulations! You guessed my secret number {st.session_state.number} in {st.session_state.guesses} guesses.")
+                st.success(f"Congratulations! You finally guessed my secret number {st.session_state.number} in {st.session_state.guesses} guesses.")
                 st.balloons()
 
 else:
